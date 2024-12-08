@@ -1,0 +1,73 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Peri Güven - 2305041010
+        // 1. Asking for the player's name.
+        Console.Write("What is your name? ");
+        string name = Console.ReadLine();
+
+        // Greet the player using their name.
+        Console.WriteLine($"Hello, {name}! Let's get started with some fun questions!");
+
+        // 2. A series of questions for the player.
+        Console.Write($"\n{name}, would you rather read a book or watch a movie? (b for book, m for movie): ");
+        string q1 = Console.ReadLine().ToLower();
+
+        Console.Write($"Do you enjoy spending time indoors or outdoors, {name}? (i for indoors, o for outdoors): ");
+        string q2 = Console.ReadLine().ToLower();
+
+        Console.Write($"What is your favorite type of vacation, {name}? (r for road trip, c for cruise, f for flying somewhere exotic): ");
+        string q3 = Console.ReadLine().ToLower();
+
+        Console.Write($"{name}, do you prefer summer or winter? (s for summer, w for winter): ");
+        string q4 = Console.ReadLine().ToLower();
+
+        // 3. Providing a remark based on the answers.
+        Console.WriteLine("\nThank you for your responses! Here's what I think based on your answers:");
+
+        // Customizing the remark based on answers.
+        if (q1 == "b" && q2 == "i")
+        {
+            Console.WriteLine("You must be a cozy person who loves a good story and a comfortable space!");
+        }
+        else if (q1 == "m" && q2 == "o")
+        {
+            Console.WriteLine("You seem like someone who enjoys adventures and experiencing the world outside!");
+        }
+        else if (q3 == "r" && q4 == "s")
+        {
+            Console.WriteLine("You love the thrill of the open road and the warmth of sunny days!");
+        }
+        else if (q3 == "f" && q4 == "w")
+        {
+            Console.WriteLine("It looks like you are a fan of snowy escapes and exciting far-off destinations!");
+        }
+        else
+        {
+            Console.WriteLine("It seems like you have a versatile personality with varied interests!");
+        }
+
+        // Bonus: Change the question based on previous answers
+        if (q1 == "b" && q4 == "w")
+        {
+            Console.Write($"Since you enjoy books and winter, {name}, do you prefer reading mysteries or fantasies? (m for mysteries, f for fantasies): ");
+            string q5 = Console.ReadLine().ToLower();
+
+            if (q5 == "m")
+            {
+                Console.WriteLine("You must love unraveling complex stories and solving puzzles!");
+            }
+            else if (q5 == "f")
+            {
+                Console.WriteLine("You enjoy escaping into magical worlds filled with wonder!");
+            }
+            else
+            {
+                Console.WriteLine("It seems like you have your own unique taste in books!");
+            }
+        }
+    }
+}
